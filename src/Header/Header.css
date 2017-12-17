@@ -1,5 +1,5 @@
 .AppHeader {
-    background: #CC0000;
+    background: #C00;
 }
 
 .AppHeader > h1 {
@@ -28,13 +28,13 @@
 }
 
 .AppHeader > nav > a:hover {
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    padding-left: 17px;
-    padding-right: 17px;
-    background: #AA0000;
+    /*border-left: 1px solid black;*/
+    /*border-right: 1px solid black;*/
+    /*padding-left: 17px;*/
+    /*padding-right: 17px;*/
+    background: #A00;
 }
 
 .AppHeader > nav > a.active {
-    background: #880000;
+    background: #800;
 }
