@@ -12,8 +12,15 @@ module.exports = {
     rules: [
       {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
       {
-        test: /\.css$/, use:
-        [
+        test: /\.svg/,
+        use: {
+          loader: 'svg-url-loader',
+          options: {noquotes: true}
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
           {'loader': 'style-loader'},
           {
             'loader': 'css-loader',
@@ -27,10 +34,11 @@ module.exports = {
   },
 
   plugins: process.argv.indexOf('-p') === -1 ? [] : [
-    new webpack.optimize.UglifyJsPlugin({
-                                          output: {
-                                            comments: false,
-                                          },
-                                        }),
+    new webpack.optimize.UglifyJsPlugin(
+      {
+        output: {
+          comments: false,
+        },
+      }),
   ],
 };

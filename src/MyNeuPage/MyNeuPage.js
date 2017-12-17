@@ -1,48 +1,37 @@
 import React from 'react';
 
-import './dropdownhoverbar.css'
+import HoverBar from "./HoverBar/HoverBar";
+import TimeSensitiveFeaturedLinks from "./TimeSensitiveFeaturedLinks/TimeSensitiveFeaturedLinks";
+
+var LINKS = [
+  {
+    "type": "section", "title": "Internet", "data":
+      [
+        {href:"https://www.google.com", "title": "Google"},
+        {href:"https://www.facebook.com", "title": "Facebook"},
+        {href:"https://my.northeastern.edu", "title": "Real myNortheastern"},
+        {href:"https://www.twitter.com", "title": "Twitter"},
+      ]
+  },
+  {
+    "type": "section", "title": "Finances", "data":
+      [
+        {href:"https://www.google.com", "title": "FASFA"},
+        {href:"https://www.facebook.com", "title": "FASFA"},
+        {href:"https://my.northeastern.edu", "title": "FASFA"},
+        {href:"https://www.twitter.com", "title": "FASFA"},
+      ]
+  },
+  {
+    "type": "link", "href": "https://blackboard.neu.edu", "title": "Blackboard"
+  }
+];
 
 export default function MyNeuPage() {
   return (
     <div className="contentPage myNeuPage">
-      <div className="hoverBar">
-
-        <div className="dropdown">
-          <button>Internet</button>
-          <div>
-            <a href="https://www.google.com">Google</a>
-            <a href="https://www.facebook.com">Facebook</a>
-            <a href="https://my.northeastern.edu">Real myNortheastern</a>
-            <a href="https://www.twitter.com">Twitter</a>
-          </div>
-        </div>
-
-        <div className="dropdown">
-          <button>Finances</button>
-          <div>
-            <a href="https://www.google.com">FASFA</a>
-            <a href="https://www.facebook.com">FASFA</a>
-            <a href="https://my.northeastern.edu">FASFA</a>
-            <a href="https://www.twitter.com">FASFA</a>
-          </div>
-        </div>
-
-        <a className="dropdownBarDirectLink" href="https://blackboard.neu.edu">Blackboard</a>
-
-      </div>
+      <HoverBar data={LINKS} />
+      <TimeSensitiveFeaturedLinks />
     </div>
   )
 }
-
-/*
-
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2sdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-
- */
