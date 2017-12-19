@@ -8,8 +8,8 @@ export default function Header() {
       <h1><span className="my">my</span>NEU+</h1>
       <nav>
         <NavLink exact to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/nostalgic">I'm Feeling Nostalgic</NavLink>
+        {/*<NavLink to="/about">About</NavLink>*/}
+        {/*<NavLink to="/nostalgic">I'm Feeling Nostalgic</NavLink>*/}
       </nav>
     </div>
   )

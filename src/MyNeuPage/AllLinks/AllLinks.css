@@ -1,0 +1,21 @@
+.allLinks {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.allLinksColumn {
+    min-width: fit-content;
+    width: 33%;
+}
+
+.allLinksSection {
+    margin: 10px;
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.allLinksSection > h1 {
+    margin: 0;
+}

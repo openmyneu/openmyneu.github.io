@@ -1,10 +1,29 @@
 .timeSensitiveFeaturedLinks {
-    width: 400px;
-    border: 1px solid black;
+    /* Ensure that the max width is 400px, but if it gets smaller, be no larger than 100%-50px */
+    width: calc(100% - 50px);
+    max-width: 400px;
+    border: 1px solid #000;
     margin: 5px auto;
     padding: 10px;
 }
 
 .timeSensitiveFeaturedLinks > img {
     height: 40px;
+    float: left;
+}
+
+.timeSensitiveFeaturedLinks > div {
+    margin-left: 40px;
+}
+
+.timeSensitiveFeaturedLinks > div > ul {
+    margin: 0;
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.floatbreak {
+    display: block;
+    height: 0;
+    clear: both;
 }

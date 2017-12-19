@@ -25,8 +25,38 @@ function parseHoverBarElement(e) {
   }
 }
 
+function createHoverBarData(data) {
+  const parsedData = {};
+  data
+    .links
+    .filter(function(e){return e.hoverBar})
+    .forEach(function(e){
+      if (e.hoverBar.index !== undefined) {
+        // It's a section
+        parsedData[e.hoverBar.section] = parsedData[e.hoverBar.section] ? parsedData[e.hoverBar.section] : [];
+        parsedData[e.hoverBar.section][parseInt(e.hoverBar.index, 10)] = {"href": e.href, "title": e.title}
+      } else {
+        // This is a dropdownBarDirectLink
+        parsedData[e.hoverBar.section] = {"href": e.href, "title": e.title};
+      }
+    });
+
+  return data.hoverBarSectionOrder.map(function(e){
+    if (parsedData[e] instanceof Array) {
+      return {
+        "type": "section", "title": e, "data": parsedData[e]
+      }
+    } else {
+      return {
+        "type": "link", "href": parsedData[e].href, "title": parsedData[e].title
+      }
+    }
+  })
+}
+
 export default function HoverBar(props) {
-  const hoverBarElements = props.data.map(parseHoverBarElement);
+  const hoverBarData = createHoverBarData(props.data);
+  const hoverBarElements = hoverBarData.map(parseHoverBarElement);
   return (
     <div className="hoverBar">
       {hoverBarElements}
