@@ -4,6 +4,8 @@ import HoverBar from "./HoverBar/HoverBar";
 import TimeSensitiveFeaturedLinks from "./TimeSensitiveFeaturedLinks/TimeSensitiveFeaturedLinks";
 import AllLinks from "./AllLinks/AllLinks";
 
+import './MyNeuPage.css'
+
 import data from './data.js';
 
 export default function MyNeuPage() {

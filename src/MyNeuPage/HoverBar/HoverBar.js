@@ -42,14 +42,18 @@ function createHoverBarData(data) {
     });
 
   return data.hoverBarSectionOrder.map(function(e){
-    if (parsedData[e] instanceof Array) {
-      return {
-        "type": "section", "title": e, "data": parsedData[e]
+    if (parsedData[e]) {
+      if (parsedData[e] instanceof Array) {
+        return {
+          "type": "section", "title": e, "data": parsedData[e]
+        }
+      } else {
+        return {
+          "type": "link", "href": parsedData[e].href, "title": parsedData[e].title
+        }
       }
     } else {
-      return {
-        "type": "link", "href": parsedData[e].href, "title": parsedData[e].title
-      }
+      return {"type": "undefined"};
     }
   })
 }

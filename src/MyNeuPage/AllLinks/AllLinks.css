@@ -12,10 +12,33 @@
 .allLinksSection {
     margin: 10px;
     border: 1px solid black;
-    padding: 15px;
+    padding: 10px;
     border-radius: 4px;
+    /*background: #ffbaba;*/ /* This sorta worked but also kinda not */
+    background: white;
+    border-top: 5px solid #C00;
+}
+
+.allLinksSection > ul {
+    padding-left: 30px;
 }
 
 .allLinksSection > h1 {
     margin: 0;
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+@media(max-width: 800px) {
+
+    .allLinksColumn {
+        width: 100%;
+        margin-bottom: -10px;
+    }
+
+    .allLinksColumn:last-child {
+        margin-bottom: 0;
+    }
+
 }

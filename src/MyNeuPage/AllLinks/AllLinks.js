@@ -4,9 +4,21 @@ import './AllLinks.css'
 import AllLinksColumn from "./AllLinksColumn";
 
 function getDataByColumns(data) {
-  const col1 = [{"title":"Academic", "links": [{"title": "Blackboard", "href": "a"},{"title": "Banner", "href": "b"},{"title": "Twitter", "href": "c"}]},{"title":"Academic", "links": [{"title": "Blackboard", "href": "a"},{"title": "Banner", "href": "b"},{"title": "Twitter", "href": "c"}]},{"title":"Academic", "links": [{"title": "Blackboard", "href": "a"},{"title": "Banner", "href": "b"},{"title": "Twitter", "href": "c"}]},{"title":"Academic", "links": [{"title": "Blackboard", "href": "a"},{"title": "Banner", "href": "b"},{"title": "Twitter", "href": "c"}]}];
+  const sections = {};
+  for (let i = 0; i < data.links.length; i++) {
+    if (data.links[i].mainSection) {
+      sections[data.links[i].mainSection] = sections[data.links[i].mainSection] ? sections[data.links[i].mainSection] : [];
+      sections[data.links[i].mainSection].push(data.links[i])
+    }
+  }
 
-  return [col1, col1, col1];
+  function sectionTitleToData(title) {
+    return {"title": title, "links": sections[title]};
+  }
+
+  return [data.allLinksSections.left.map(sectionTitleToData),
+          data.allLinksSections.center.map(sectionTitleToData),
+          data.allLinksSections.right.map(sectionTitleToData)];
 }
 
 export default function AllLinks(props) {
