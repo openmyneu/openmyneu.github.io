@@ -1,0 +1,48 @@
+  - title: My Schedule
+    link: https://nubanner.neu.edu/ssomanager/c/SSB?pkg=bwskfshd.P_CrseSchdDetl
+    hoverBar:
+      section: Registrar
+      index: 0
+    mainSection: Registrar
+
+  - title: My Grades
+    link: https://nubanner.neu.edu/ssomanager/c/SSB?pkg=bwskogrd.P_ViewTermGrde
+    hoverBar:
+      section: Registrar
+      index: 1
+    mainSection: Registrar
+
+  - title: Course Registration (old)
+    link: https://nubanner.neu.edu/ssomanager/c/SSB?pkg=twbkwbis.P_GenMenu?name=bmenu.P_RegMnu
+    hoverBar:
+      section: Registrar
+      index: 2
+    mainSection: Registrar
+
+  - title: I Am Here
+    link: https://prod-web.neu.edu/wasapp/bn/iah/secure/iah/main.do
+    hoverBar:
+      section: Registrar
+      index: 3
+    mainSection: Registrar
+
+  - title: My Degree Audit
+    link: https://prod-web.neu.edu/wasapp/DARSStudent/RequestAuditServlet
+    hoverBar:
+      section: Registrar
+      index: 4
+    mainSection: Registrar
+
+  - title: Course Catalog
+    link: https://wl11gp.neu.edu/udcprod8/bwckctlg.p_disp_dyn_ctlg
+    hoverBar:
+      section: Registrar
+      index: 5
+    mainSection: Registrar
+
+  - title: My Transcript
+    link: https://nubanner.neu.edu/ssomanager/c/SSB?pkg=bwskotrn.P_ViewTermTran
+    hoverBar:
+      section: Registrar
+      index: 6
+    mainSection: Registrar

@@ -9,7 +9,7 @@ const nowDateNum = (now.getMonth() + 1) + (now.getDate() / 100);
 // const nowDateNum = 12.20; // FOR TESTING fixme
 
 function createFeaturedLinkElement(e) {
-  return <li><a href={e.href}>{e.title}</a></li>
+  return <li><a href={e.link}>{e.title}</a></li>
 }
 
 // Returns true if c is between a and b mod n

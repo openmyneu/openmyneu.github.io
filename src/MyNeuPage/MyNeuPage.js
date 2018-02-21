@@ -6,7 +6,7 @@ import AllLinks from "./AllLinks/AllLinks";
 
 import './MyNeuPage.css'
 
-import data from './data.js';
+import data from '../data';
 
 export default function MyNeuPage() {
   return (

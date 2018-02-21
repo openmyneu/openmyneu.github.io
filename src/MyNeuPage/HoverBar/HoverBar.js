@@ -3,7 +3,7 @@ import React from 'react'
 import './HoverBar.css'
 
 function parseHoverBarSection(e) {
-  return (<a href={e.href}>{e.title}</a>)
+  return (<a href={e.link}>{e.title}</a>)
 }
 
 function parseHoverBarElement(e) {
@@ -17,7 +17,7 @@ function parseHoverBarElement(e) {
     </div>)
   } else if (e.type === "link") {
     return (
-      <a className="dropdownBarDirectLink" href={e.href}>{e.title}</a>
+      <a className="dropdownBarDirectLink" href={e.link}>{e.title}</a>
     )
   } else {
     console.warn("Unknown type of hoverBarElement", e);
@@ -29,15 +29,15 @@ function createHoverBarData(data) {
   const parsedData = {};
   data
     .links
-    .filter(function(e){return e.hoverBar})
-    .forEach(function(e){
+    .filter(e => e.hoverBar)
+    .forEach(e => {
       if (e.hoverBar.index !== undefined) {
         // It's a section
         parsedData[e.hoverBar.section] = parsedData[e.hoverBar.section] ? parsedData[e.hoverBar.section] : [];
-        parsedData[e.hoverBar.section][parseInt(e.hoverBar.index, 10)] = {"href": e.href, "title": e.title}
+        parsedData[e.hoverBar.section][parseInt(e.hoverBar.index, 10)] = {"link": e.link, "title": e.title}
       } else {
         // This is a dropdownBarDirectLink
-        parsedData[e.hoverBar.section] = {"href": e.href, "title": e.title};
+        parsedData[e.hoverBar.section] = {"link": e.link, "title": e.title};
       }
     });
 
@@ -49,7 +49,7 @@ function createHoverBarData(data) {
         }
       } else {
         return {
-          "type": "link", "href": parsedData[e].href, "title": parsedData[e].title
+          "type": "link", "link": parsedData[e].link, "title": parsedData[e].title
         }
       }
     } else {
