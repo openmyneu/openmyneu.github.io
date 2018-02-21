@@ -2,8 +2,6 @@ import React from 'react';
 
 import './footer.css';
 
-// TODO change this file when I move to openMyNeu.com
-
 export default function Footer() {
   return (
     <div className="footer">
