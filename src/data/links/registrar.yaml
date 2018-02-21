@@ -18,6 +18,13 @@
       section: Registrar
       index: 2
     mainSection: Registrar
+#    featuredTimes:
+#      - from:
+#          - 12
+#          - 1
+#        to:
+#          - 5
+#          - 11
 
   - title: I Am Here
     link: https://prod-web.neu.edu/wasapp/bn/iah/secure/iah/main.do
