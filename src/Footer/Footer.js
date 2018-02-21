@@ -11,13 +11,13 @@ export default function Footer() {
       &nbsp;
       &middot;
       &nbsp;
-      <a href="https://github.com/bettermyneu/bettermyneu.github.io/blob/master/LICENSE">
+      <a href="https://github.com/openmyneu/openmyneu.github.io/blob/master/LICENSE">
         MIT License
       </a>
       &nbsp;
       &middot;
       &nbsp;
-      <a href="https://github.com/bettermyneu/bettermyneu.github.io">
+      <a href="https://github.com/openmyneu/openmyneu.github.io">
         GitHub
       </a>
     </div>
