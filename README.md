@@ -1,5 +1,5 @@
-# Open MyNEU
+# openMyNEU
 
-An open source rewrite of the myneu website.
+An open source rewrite of the MyNEU website.
 
 ## Pull Requests Welcomed!

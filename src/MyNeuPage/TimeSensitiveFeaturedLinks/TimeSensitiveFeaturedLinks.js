@@ -1,12 +1,11 @@
 import React from 'react';
+import moment from 'moment';
 
 import './TimeSensitiveFeaturedLinks.css';
 import clock_icon from './clock.svg';
 
 // This isn't truly constant, but since time moves soooo slow, we can consider it constant for the page load.
-const now = new Date();
-const nowDateNum = (now.getMonth() + 1) + (now.getDate() / 100);
-// const nowDateNum = 12.20; // FOR TESTING fixme
+const nowDateNum = moment().dayOfYear();
 
 function createFeaturedLinkElement(e) {
   return <li><a href={e.link}>{e.title}</a></li>
@@ -22,16 +21,18 @@ function isBetween(a,b,c,n){
   );
 }
 
+function parseDate(dateString) {
+  return moment(dateString, "MMM DD", true).dayOfYear();
+}
+
 function isNow(timeRange) {
-  const start = timeRange.from[0] + (timeRange.from[1] / 100);
-  const end = timeRange.to[0] + (timeRange.to[1] / 100);
-  return isBetween(start, end, nowDateNum, 12);
+  const start = parseDate(timeRange.from);
+  const end = parseDate(timeRange.to);
+  return isBetween(start, end, nowDateNum, 366);
 }
 
 function getCurrentFeaturedLinks(data) {
-  return data.links.filter(function(link){
-    return link.featuredTimes && link.featuredTimes.some(isNow);
-  })
+  return data.links.filter(link => link.featuredTimes && link.featuredTimes.some(isNow))
 }
 
 export default function TimeSensitiveFeaturedLinks(props) {
